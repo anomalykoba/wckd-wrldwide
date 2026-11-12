@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kurt | WCKD</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>@import "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap";@import "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap";:root{--bg-color:#070b12;--panel-bg:#0a0e1773;--panel-border:#ffffff0d;--soft-white:#ffffffd9;--muted-white:#ffffff80;--shadow-soft:0 20px 40px #0006;--ease-smooth:cubic-bezier(.25, 1, .5, 1);--ease-bouncy:cubic-bezier(.34, 1.56, .64, 1)}*{box-sizing:border-box;margin:0;padding:0;font-family:Poppins,sans-serif}html,body{min-height:100%;overflow:hidden}::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:0 0}::-webkit-scrollbar-thumb{background:#ffffff26;border-radius:10px}::-webkit-scrollbar-thumb:hover{background:#ffffff40}body{color:#fff;user-select:none;background:linear-gradient(135deg,#0204087c,#070b128c),url(https://cdn.discordapp.com/attachments/1365700322550349859/1552708715960991754/download.gif?ex=6ab6982d&is=6ab546ad&hm=87728548a763182563b2d3de17e95c44c5e490799d61acc155862e3bd311ff2d&) 50%/cover no-repeat fixed;justify-content:center;align-items:center;min-height:100vh;display:flex;position:relative}body:before{content:"";pointer-events:none;z-index:0;background:radial-gradient(circle at 50% 0,#67a6ff08,#0000 60%),radial-gradient(circle at 50% 100%,#000000f2,#0000 70%);position:fixed;inset:0}.main-shell{z-index:1;justify-content:center;align-items:center;width:min(1200px,92vw);min-height:760px;display:flex;position:relative}.showcase{grid-template-columns:1.2fr .8fr;align-items:center;gap:40px;width:100%;display:grid}.hero-panel{background:var(--panel-bg);border:1px solid var(--panel-border);min-height:620px;box-shadow:var(--shadow-soft);-webkit-backdrop-filter:blur(20px);border-radius:32px;position:relative;overflow:hidden}.hero-art{border-radius:30px;width:100%;height:100%;min-height:620px;position:relative;overflow:hidden}.hero-image{object-fit:cover;object-position:center;filter:saturate(1.1)contrast(1.1)brightness(.85);width:100%;height:100%;transition:transform 10s;position:absolute;inset:0;transform:scale(1.05)}.hero-panel:hover .hero-image{transform:scale(1.1)}.hero-overlay{background:linear-gradient(90deg,#04060acc 0%,#04060a33 50%,#04060acc 100%);position:absolute;inset:0}.profile-panel{border:1px solid var(--panel-border);box-shadow:var(--shadow-soft), inset 0 1px #ffffff05;-webkit-backdrop-filter:blur(25px);background:#0a0e178c;border-radius:32px;padding:40px 32px;position:relative}.panel-header{justify-content:space-between;align-items:center;margin-bottom:24px;display:flex}.eyebrow{letter-spacing:.35rem;text-transform:uppercase;color:var(--muted-white);font-size:.7rem;font-weight:600}.live-badge{color:#74f0a4;letter-spacing:.1rem;text-transform:uppercase;background:#43c78014;border:1px solid #61e99833;border-radius:999px;align-items:center;gap:8px;padding:6px 14px;font-size:.7rem;font-weight:600;display:inline-flex;box-shadow:0 0 20px #43c7801a}.live-badge:before{content:"";background:#74f0a4;border-radius:50%;width:6px;height:6px;animation:2s infinite pulse;box-shadow:0 0 10px #74f0a4cc}@keyframes pulse{0%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.2)}to{opacity:1;transform:scale(1)}}.avatar-wrap{justify-content:center;margin-bottom:24px;display:flex}.avatar{width:160px;height:160px;transition:transform .4s var(--ease-bouncy);background:linear-gradient(135deg,#ffffff1a,#ffffff03);border-radius:50%;padding:4px;position:relative;box-shadow:0 15px 35px #0006}.avatar:hover{transform:scale(1.05)}.avatar:after{content:"";background-image:var(--avatar-decoration,none);opacity:0;pointer-events:none;z-index:3;background-position:50%;background-size:cover;border-radius:50%;transition:opacity .3s;position:absolute;inset:-7px}.avatar.has-decoration:after{opacity:1}.avatar img{z-index:2;object-fit:cover;background:#000;border:2px solid #ffffff14;border-radius:50%;width:100%;height:100%;position:relative}.status-dot{z-index:6;background:gray;border:4px solid #0b0f17;border-radius:50%;width:20px;height:20px;position:absolute;bottom:14px;right:14px}.user-info{text-align:center}.username{background:linear-gradient(90deg,#fff,#a0aec0);-webkit-text-fill-color:transparent;letter-spacing:-.04em;-webkit-background-clip:text;margin:0 0 6px;font-size:clamp(2.5rem,3.5vw,3.5rem);font-weight:800;line-height:1.1}.guild-tag{letter-spacing:.1rem;color:var(--muted-white);background:#ffffff08;border:1px solid #ffffff0d;border-radius:999px;margin-bottom:16px;padding:4px 12px;font-size:.7rem;font-weight:500;display:inline-block}.status-text{color:var(--soft-white);min-height:24px;font-size:.95rem;font-weight:400}.bio{min-height:24px;color:var(--muted-white);letter-spacing:.02em;margin-top:16px;font-size:.9rem;font-weight:300}.cursor{vertical-align:middle;background:#fff9;width:2px;margin-left:2px;animation:1s infinite blink;display:inline-block}@keyframes blink{0%,50%{opacity:1}51%,to{opacity:0}}.activity{justify-content:center;min-height:24px;display:flex}.activity-card{text-align:left;backdrop-filter:blur(10px);transition:transform .3s var(--ease-bouncy);background:#ffffff05;border:1px solid #ffffff0a;border-radius:18px;align-items:center;gap:16px;margin-top:18px;padding:14px 20px;display:inline-flex}.activity-card:hover{background:#ffffff0a;border-color:#ffffff1a;transform:translateY(-3px)}.act-icon{color:#fffc;font-size:2rem}.act-details{flex-direction:column;display:flex}.act-name{color:#fff;font-size:.85rem;font-weight:600}.act-state{color:var(--muted-white);margin-top:3px;font-size:.75rem}.socials{justify-content:center;gap:16px;margin-top:32px;display:flex}.social-btn{width:54px;height:54px;color:var(--soft-white);transition:all .4s var(--ease-bouncy);background:#ffffff05;border:1px solid #ffffff0d;border-radius:18px;justify-content:center;align-items:center;font-size:1.4rem;text-decoration:none;display:flex}.social-btn:hover{color:#fff;background:#ffffff14;border-color:#ffffff26;transform:translateY(-5px);box-shadow:0 12px 24px #0000004d}.back-home{z-index:20;border:1px solid var(--panel-border);color:var(--soft-white);-webkit-backdrop-filter:blur(15px);background:#0a0e1780;border-radius:14px;align-items:center;gap:10px;padding:12px 20px;font-size:.8rem;font-weight:500;text-decoration:none;transition:all .3s;display:inline-flex;position:fixed;top:30px;left:30px}.back-home:hover{color:#fff;background:#ffffff1a;border-color:#ffffff4d;transform:translate(-3px)}#intro-screen{z-index:9999;color:var(--soft-white);letter-spacing:.2rem;cursor:pointer;background:#020408;justify-content:center;align-items:center;font-size:clamp(1.2rem,2vw,2rem);font-weight:300;transition:opacity 1.2s,visibility 1.2s;display:flex;position:fixed;inset:0}#intro-screen.fade-out{opacity:0;visibility:hidden;pointer-events:none}.fade-in{opacity:0;animation:.4s forwards fadeIn}@keyframes fadeIn{0%{opacity:0;filter:blur(4px)}to{opacity:1;filter:blur()}}#main-content,.highlights,.family-section{transition:transform 1s var(--ease-smooth), opacity .8s ease, filter .8s ease}.highlights,.family-section{z-index:5;opacity:0;pointer-events:none;filter:blur(10px);padding:100px 10vw 60px;position:absolute;inset:0;overflow-y:auto}body[data-page="0"] #main-content{opacity:1;pointer-events:auto;filter:blur();transform:translate(0)scale(1)}body[data-page="0"] .highlights{transform:translate(50vw)scale(.9)}body[data-page="0"] .family-section{transform:translate(100vw)scale(.8)}body[data-page="0"] .prev-arrow{opacity:0;pointer-events:none;transform:translate(-20px)}body[data-page="0"] .next-arrow{opacity:1;pointer-events:auto;transform:translate(0)}body[data-page="1"] #main-content{opacity:0;pointer-events:none;filter:blur(10px);transform:translate(-50vw)scale(.9)}body[data-page="1"] .highlights{opacity:1;pointer-events:auto;filter:blur();transform:translate(0)scale(1)}body[data-page="1"] .family-section{transform:translate(50vw)scale(.9)}body[data-page="1"] .prev-arrow,body[data-page="1"] .next-arrow{opacity:1;pointer-events:auto;transform:translate(0)}body[data-page="2"] #main-content{transform:translate(-100vw)scale(.8)}body[data-page="2"] .highlights{opacity:0;pointer-events:none;filter:blur(10px);transform:translate(-50vw)scale(.9)}body[data-page="2"] .family-section{opacity:1;pointer-events:auto;filter:blur();transform:translate(0)scale(1)}body[data-page="2"] .prev-arrow{opacity:1;pointer-events:auto;transform:translate(0)}body[data-page="2"] .next-arrow{opacity:0;pointer-events:none;transform:translate(20px)}.next-arrow,.prev-arrow{z-index:15;width:60px;height:60px;color:var(--soft-white);cursor:pointer;backdrop-filter:blur(15px);transition:all .4s var(--ease-bouncy);background:#0a0e1766;border:1px solid #ffffff0d;border-radius:50%;justify-content:center;align-items:center;margin-top:-30px;font-size:1.2rem;display:flex;position:fixed;top:50%}.next-arrow{right:30px}.prev-arrow{left:30px}.next-arrow:hover,.prev-arrow:hover{color:#fff;background:#ffffff1a;border-color:#fff3;transform:scale(1.1);box-shadow:0 0 20px #ffffff0d}.section-title{text-align:center;letter-spacing:-.03em;background:linear-gradient(135deg,#fff 0%,#7a8a9e 100%);-webkit-text-fill-color:transparent;-webkit-background-clip:text;margin-bottom:4px;font-size:clamp(2rem,4vw,3.2rem);font-weight:800}.section-sub{text-align:center;color:var(--muted-white);letter-spacing:.25rem;text-transform:uppercase;margin-bottom:80px;font-size:.9rem;font-weight:500}.video-grid{grid-template-columns:repeat(4,1fr);gap:16px;max-width:1000px;margin:0 auto;display:grid}.video-card{border:1px solid var(--panel-border);box-shadow:var(--shadow-soft);backdrop-filter:blur(15px);transition:all .4s var(--ease-bouncy);background:#0a0e1766;border-radius:16px;flex-direction:column;display:flex;overflow:hidden}.video-card:hover{border-color:#ffffff26;transform:translateY(-5px)scale(1.02);box-shadow:0 15px 30px #00000080}.video-thumb{aspect-ratio:9/16;background:#000;border-radius:16px 16px 0 0;width:100%;position:relative;overflow:hidden}.video-thumb iframe{object-fit:contain;border:0;outline:none;width:100%;height:100%;position:absolute;top:0;left:0}.video-title{color:var(--soft-white);text-align:center;white-space:nowrap;text-overflow:ellipsis;background:#0000004d;border-top:1px solid #ffffff05;padding:10px 12px;font-size:.75rem;font-weight:500;overflow:hidden}.family-list{background:0 0;flex-direction:column;max-width:900px;margin:0 auto;padding-bottom:60px;display:flex}.family-row{border-bottom:1px solid #ffffff0a;align-items:center;padding:16px 20px;transition:background .3s;display:flex}.family-row:first-child{border-top:1px solid #ffffff0a}.family-row:hover{background:#ffffff05}.row-num{color:#ffffff4d;text-align:left;width:60px;font-family:Roboto Mono,monospace;font-size:.85rem}.row-avatar{background-color:#111;background-position:50%;background-size:cover;border:1px solid #ffffff0d;border-radius:50%;flex-shrink:0;width:48px;height:48px;margin-right:24px}.row-name{color:#ffffffb3;letter-spacing:.02em;font-family:Roboto Mono,monospace;font-size:.95rem;font-weight:400}@media (width<=1100px){.showcase{grid-template-columns:1fr}.hero-panel,.hero-art{min-height:320px}.highlights,.family-section{padding:100px 5vw 40px}.video-grid{grid-template-columns:repeat(2,1fr)}}@media (width<=700px){body{overflow-y:auto}.next-arrow,.prev-arrow{width:50px;height:50px;margin-top:-25px;font-size:1rem}.next-arrow{right:15px}.prev-arrow{left:15px}.family-row{padding:12px 10px}.row-num{width:40px;font-size:.75rem}.row-avatar{width:40px;height:40px;margin-right:16px}.row-name{font-size:.85rem}.video-grid{grid-template-columns:1fr}}@media (width<=520px){.main-shell{width:min(94vw,440px)}}
+
+/* Mobile layout: keep every profile section in a readable, scrollable column. */
+@media screen and (max-width: 760px) {
+  html { height: auto; min-height: 100%; overflow-x: hidden; }
+  body {
+    width: 100%; height: auto; min-height: 100svh;
+    display: flex; flex-direction: column; justify-content: flex-start; align-items: center;
+    overflow-x: hidden !important; overflow-y: auto !important; padding: 0 0 24px;
+  }
+  #main-content.main-shell, .main-shell {
+    box-sizing: border-box; width: 100%; max-width: 100%; height: auto; min-height: 0;
+    display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; margin: 0; padding: 68px 14px 20px; position: relative; inset: auto; transform: none !important;
+  }
+  .showcase { box-sizing: border-box; width: 100%; grid-template-columns: minmax(0, 1fr) !important; align-items: stretch; justify-items: stretch; gap: 16px; }
+  .showcase > *, .hero-panel, .hero-art, .profile-panel { min-width: 0; max-width: 100%; }
+  .hero-panel { width: 100%; min-height: 0; height: auto; }
+  .hero-art { width: 100%; height: clamp(220px, 46svh, 380px); min-height: 0; }
+  .profile-panel { box-sizing: border-box; width: 100%; min-height: 0; margin: 0 auto; padding: 26px 18px; border-radius: 22px; }
+  .panel-header { flex-wrap: wrap; gap: 10px; }
+  .avatar { width: min(34vw, 136px); height: min(34vw, 136px); }
+  .username { max-width: 100%; font-size: clamp(1.8rem, 8vw, 2.7rem); overflow-wrap: anywhere; }
+  .guild-tag, .status-text, .bio { max-width: 100%; overflow-wrap: anywhere; }
+  .activity-card { box-sizing: border-box; width: 100%; max-width: 100%; gap: 12px; padding: 12px 14px; }
+  .act-details, .act-name, .act-state { min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
+  .socials { flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .social-btn { width: 46px; height: 46px; border-radius: 14px; }
+  .highlights, .family-section {
+    box-sizing: border-box; position: relative !important; inset: auto !important;
+    width: 100%; min-height: 0; max-height: none; margin: 12px auto 0; padding: 30px 14px 34px;
+    opacity: 1 !important; pointer-events: auto !important; filter: none !important;
+    transform: none !important; overflow: visible !important;
+  }
+  #main-content { opacity: 1 !important; pointer-events: auto !important; filter: none !important; }
+  .section-title, .section-sub { max-width: 100%; overflow-wrap: anywhere; }
+  .section-title { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+  .section-sub { margin-bottom: 28px; letter-spacing: .16rem; }
+  .video-grid { box-sizing: border-box; width: 100%; grid-template-columns: minmax(0, 1fr) !important; gap: 14px; }
+  .video-card, .video-thumb { min-width: 0; width: 100%; }
+  .video-thumb { aspect-ratio: 16 / 9; }
+  .video-title { white-space: normal; overflow-wrap: anywhere; }
+  .family-list { width: 100%; }
+  .family-row { box-sizing: border-box; min-width: 0; gap: 10px; padding: 12px 4px; }
+  .row-num { flex: 0 0 30px; width: 30px; }
+  .row-avatar { flex: 0 0 40px; width: 40px; height: 40px; margin-right: 0; }
+  .row-name { min-width: 0; overflow-wrap: anywhere; }
+  .next-arrow, .prev-arrow { display: none !important; }
+  .back-home { z-index: 10001; top: max(10px, env(safe-area-inset-top)); left: max(10px, env(safe-area-inset-left)); padding: 9px 12px; font-size: .76rem; }
+  #intro-screen { z-index: 10002; padding: 20px; text-align: center; }
+}
+@media screen and (max-width: 380px) {
+  .profile-panel { padding: 22px 14px; }
+  .activity-card { align-items: flex-start; }
+  .row-avatar { flex-basis: 34px; width: 34px; height: 34px; }
+}
+</style>
+</head>
+<body data-page="0">
+  <a class="back-home" href="index.html" aria-label="Go back to the WCKD main website">
+    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+    <span>WCKD</span>
+  </a>
+
+  <div id="intro-screen">
+    <span id="type-text"></span><span class="cursor">|</span>
+  </div>
+
+  <div id="main-content" class="main-shell">
+    <div class="showcase">
+      <section class="hero-panel" aria-label="Featured artwork">
+        <div class="hero-art">
+          <img class="hero-image" src="https://file.garden/aPzCaL1nmSm7SyAN/kurttzx.png" alt="Featured artwork">
+          <div class="hero-overlay"></div>
+        </div>
+      </section>
+
+      <aside class="profile-panel">
+        <div class="panel-header">
+          <span class="eyebrow">WCKD</span>
+        </div>
+
+        <div class="avatar-wrap">
+          <div class="avatar">
+            <img id="avatar" src="" alt="Profile">
+            <span class="status-dot" id="status-dot" title="offline"></span>
+          </div>
+        </div>
+
+        <div class="user-info">
+          <h1 class="username" id="username">Kurt</h1>
+          <span id="guild-tag" class="guild-tag">#0003</span>
+          <p class="status-text" id="status-text"></p>
+          <div class="activity" id="activity-text"></div>
+          <p class="bio"><span id="typing"></span><span class="cursor">|</span></p>
+        </div>
+
+        <div class="socials">
+          <a href="https://www.youtube.com/@kurttzx" target="_blank" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://kick.com/kurttzx" target="_blank" class="social-btn" aria-label="Kick"><i class="fa-solid fa-link"></i></a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <audio id="bg-music" src="https://file.garden/aPzCaL1nmSm7SyAN/Uncle%20dags-%20Lola%20ko%20(Gamo%20Gamo).mp3" loop></audio>
+
+  <button class="next-arrow" id="next-arrow" aria-label="Next Page"><i class="fa-solid fa-chevron-right"></i></button>
+  <button class="prev-arrow" id="prev-arrow" aria-label="Previous Page"><i class="fa-solid fa-chevron-left"></i></button>
+
+  <section class="highlights" id="highlights" aria-label="Highlights">
+    <h2 class="section-title">Highlights</h2>
+    <p class="section-sub">Clips &amp; Moments</p>
+    <div class="video-grid" id="video-grid"></div>
+  </section>
+
+  <section class="family-section" id="family-section" aria-label="Family Over Everything">
+    <h2 class="section-title">Family Over Everything</h2>
+    <p class="section-sub">Brothers & Sisters</p>
+    
+    <div class="family-list">
+      <div class="family-row">
+        <span class="row-num">01</span>
+        <div class="row-avatar" style="background-image: url('https://cdn.discordapp.com/embed/avatars/0.png');"></div>
+        <span class="row-name">Ella Lue</span>
+      </div>
+      <div class="family-row">
+        <span class="row-num">02</span>
+        <div class="row-avatar" style="background-image: url('https://cdn.discordapp.com/embed/avatars/1.png');"></div>
+        <span class="row-name">Heira Lue</span>
+      </div>
+      <div class="family-row">
+        <span class="row-num">03</span>
+        <div class="row-avatar" style="background-image: url('https://cdn.discordapp.com/embed/avatars/2.png');"></div>
+        <span class="row-name">Gabo Lue</span>
+      </div>
+      <div class="family-row">
+        <span class="row-num">04</span>
+        <div class="row-avatar" style="background-image: url('https://cdn.discordapp.com/embed/avatars/3.png');"></div>
+        <span class="row-name">Kwatro Lue</span>
+      </div>
+      <div class="family-row">
+        <span class="row-num">05</span>
+        <div class="row-avatar" style="background-image: url('https://cdn.discordapp.com/embed/avatars/4.png');"></div>
+        <span class="row-name">Nashi Lue</span>
+      </div>
+      <div class="family-row">
+        <span class="row-num">06</span>
+        <div class="row-avatar" style="background-image: url('https://cdn.discordapp.com/embed/avatars/5.png');"></div>
+        <span class="row-name">Fallen Lue</span>
+      </div>
+      <div class="family-row">
+        <span class="row-num">07</span>
+        <div class="row-avatar" style="background-image: url('https://cdn.discordapp.com/embed/avatars/0.png');"></div>
+        <span class="row-name">Bullet Lue</span>
+      </div>
+      <div class="family-row">
+        <span class="row-num">08</span>
+        <div class="row-avatar" style="background-image: url('https://cdn.discordapp.com/embed/avatars/1.png');"></div>
+        <span class="row-name">Ady Lue</span>
+      </div>
+      <div class="family-row">
+        <span class="row-num">09</span>
+        <div class="row-avatar" style="background-image: url('https://cdn.discordapp.com/embed/avatars/2.png');"></div>
+        <span class="row-name">Alfie Lue</span>
+      </div>
+      <div class="family-row">
+        <span class="row-num">10</span>
+        <div class="row-avatar" style="background-image: url('https://cdn.discordapp.com/embed/avatars/3.png');"></div>
+        <span class="row-name">Trevs Lue</span>
+      </div>
+      <div class="family-row">
+        <span class="row-num">11</span>
+        <div class="row-avatar" style="background-image: url('https://cdn.discordapp.com/embed/avatars/4.png');"></div>
+        <span class="row-name">Woozie Lue</span>
+      </div>
+      <div class="family-row">
+        <span class="row-num">12</span>
+        <div class="row-avatar" style="background-image: url('https://cdn.discordapp.com/embed/avatars/5.png');"></div>
+        <span class="row-name">Maze Lue</span>
+      </div>
+      <div class="family-row">
+        <span class="row-num">13</span>
+        <div class="row-avatar" style="background-image: url('https://cdn.discordapp.com/embed/avatars/0.png');"></div>
+        <span class="row-name">Kurt Lue</span>
+      </div>
+      <div class="family-row">
+        <span class="row-num">14</span>
+        <div class="row-avatar" style="background-image: url('https://cdn.discordapp.com/embed/avatars/1.png');"></div>
+        <span class="row-name">Mingo Lue</span>
+      </div>
+      <div class="family-row">
+        <span class="row-num">15</span>
+        <div class="row-avatar" style="background-image: url('https://cdn.discordapp.com/embed/avatars/2.png');"></div>
+        <span class="row-name">Reezu Lue</span>
+      </div>
+      <div class="family-row">
+        <span class="row-num">16</span>
+        <div class="row-avatar" style="background-image: url('https://cdn.discordapp.com/embed/avatars/3.png');"></div>
+        <span class="row-name">Syy Lue</span>
+      </div>
+      <div class="family-row">
+        <span class="row-num">17</span>
+        <div class="row-avatar" style="background-image: url('https://cdn.discordapp.com/embed/avatars/4.png');"></div>
+        <span class="row-name">Yang Lue</span>
+      </div>
+      <div class="family-row">
+        <span class="row-num">18</span>
+        <div class="row-avatar" style="background-image: url('https://cdn.discordapp.com/embed/avatars/5.png');"></div>
+        <span class="row-name">Malix Lue</span>
+      </div>
+      <div class="family-row">
+        <span class="row-num">19</span>
+        <div class="row-avatar" style="background-image: url('https://cdn.discordapp.com/embed/avatars/0.png');"></div>
+        <span class="row-name">Arki Lue</span>
+      </div>
+      <div class="family-row">
+        <span class="row-num">20</span>
+        <div class="row-avatar" style="background-image: url('https://cdn.discordapp.com/embed/avatars/1.png');"></div>
+        <span class="row-name">Chozen Lue</span>
+      </div>
+      <div class="family-row">
+        <span class="row-num">21</span>
+        <div class="row-avatar" style="background-image: url('https://cdn.discordapp.com/embed/avatars/2.png');"></div>
+        <span class="row-name">Cinco Lue</span>
+      </div>
+      <div class="family-row">
+        <span class="row-num">22</span>
+        <div class="row-avatar" style="background-image: url('https://cdn.discordapp.com/embed/avatars/3.png');"></div>
+        <span class="row-name">Kat Lue</span>
+      </div>
+      <div class="family-row">
+        <span class="row-num">23</span>
+        <div class="row-avatar" style="background-image: url('https://cdn.discordapp.com/embed/avatars/4.png');"></div>
+        <span class="row-name">Mido Lue</span>
+      </div>
+      <div class="family-row">
+        <span class="row-num">24</span>
+        <div class="row-avatar" style="background-image: url('https://cdn.discordapp.com/embed/avatars/5.png');"></div>
+        <span class="row-name">Timba Lue</span>
+      </div>
+    </div>
+  </section>
+
+  <script>const e=`484191284936966162`,t=document.getElementById(`status-dot`),n=document.getElementById(`activity-text`),r=document.getElementById(`status-text`),i=document.getElementById(`avatar`),a=document.querySelector(`.avatar`),o={online:`#43b581`,idle:`#faa61a`,dnd:`#f04747`,offline:`#747f8d`},s={online:`Online`,idle:`Idle`,dnd:`Do Not Disturb`,offline:`Offline`},c=new WebSocket(`wss://api.lanyard.rest/socket`);c.onopen=()=>c.send(JSON.stringify({op:2,d:{subscribe_to_id:e}})),c.onmessage=({data:c})=>{let{t:l,d:u}=JSON.parse(c);if(l===`INIT_STATE`||l===`PRESENCE_UPDATE`){let c=u.discord_status;t.style.backgroundColor=o[c]||`#747f8d`,t.title=s[c]||`Unknown`;let l=u.activities.find(e=>e.type===4);if(r){if(l&&l.state){let e=l.emoji?l.emoji.id?`<img src="https://cdn.discordapp.com/emojis/${l.emoji.id}.png" alt="emoji" style="width: 1.1em; height: 1.1em; vertical-align: -0.15em; margin-right: 6px;">`:`<span style="margin-right: 6px;">${l.emoji.name}</span>`:``;r.innerHTML=`${e}${l.state}`}else r.textContent=s[c]}let d=u.discord_user&&u.discord_user.avatar?`https://cdn.discordapp.com/avatars/${e}/${u.discord_user.avatar}.png?size=512`:`https://cdn.discordapp.com/embed/avatars/0.png`;i.src=d,a&&(u.discord_user&&u.discord_user.avatar_decoration_data&&u.discord_user.avatar_decoration_data.asset?(a.style.setProperty(`--avatar-decoration`,`url('https://cdn.discordapp.com/avatar-decoration-presets/${u.discord_user.avatar_decoration_data.asset}.png?size=160')`),a.classList.add(`has-decoration`)):a.classList.remove(`has-decoration`));let f=u.activities.find(e=>e.type===0||e.type===2);if(f){let e=`<i class="fa-solid fa-gamepad act-icon"></i>`,t=`Playing ${f.name}`;f.type===2?(e=`<i class="fa-brands fa-spotify act-icon" style="color: #1DB954;"></i>`,t=`Listening to Spotify`):f.name.includes(`Visual Studio Code`)&&(e=`<i class="fa-solid fa-code act-icon" style="color: #31a8ff;"></i>`);let r=f.details?f.details:``;f.state&&(r+=(r?`<br>`:``)+f.state),n.innerHTML=`
+              <div class="activity-card">
+                ${e}
+                <div class="act-details">
+                  <span class="act-name">${t}</span>
+                  <span class="act-state">${r}</span>
+                </div>
+              </div>
+            `,n.style.display=`flex`}else n.innerHTML=``,n.style.display=`none`}};const l=[`LUE`,`SOFTSHIT`,`BADCHILD`,`WCKD`];let u=0,d=0,f=!1;const p=document.getElementById(`typing`);function m(){let e=l[u];if(p.textContent=e.substring(0,f?d--:d++),!f&&d===e.length+1){f=!0,setTimeout(m,1200);return}f&&d===0&&(f=!1,u=(u+1)%l.length),setTimeout(m,f?40:80)}m(),document.addEventListener(`contextmenu`,e=>e.preventDefault()),document.onkeydown=e=>{if(e.keyCode==123||e.ctrlKey&&e.shiftKey&&e.keyCode==73||e.ctrlKey&&e.keyCode==85)return!1},document.addEventListener(`dragstart`,e=>e.preventDefault());const h=document.getElementById(`intro-screen`),g=document.getElementById(`bg-music`),_=document.getElementById(`type-text`);let v=0;function y(){if(v<17){let e=document.createElement(`span`);e.textContent=`click to enter...`.charAt(v),e.classList.add(`fade-in`),_.appendChild(e),v++,setTimeout(y,80)}}y(),h.addEventListener(`click`,()=>{h.classList.add(`fade-out`),setTimeout(()=>{h.style.display=`none`,setTimeout(()=>{g.play().catch(()=>{})},1500)},1200)});const b=[`CSiO6eEuuls`,`SEuoOf6RUZ4`,`ofioDRAyaFI`,`DHCnL1cXVMM`,`BttIA0blHHM`],x=document.getElementById(`video-grid`);function S(){x.innerHTML=``,b.forEach(e=>{let t=document.createElement(`div`);t.className=`video-card`,t.innerHTML=`
+            <div class="video-thumb"><iframe src="https://www.youtube.com/embed/${e}" frameborder="0" scrolling="no" allow="fullscreen; autoplay;" allowfullscreen></iframe></div>
+            <div class="video-title">Loading...</div>
+          `,x.appendChild(t);let n=t.querySelector(`.video-title`);fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${e}`)}`).then(e=>e.json()).then(e=>{n.textContent=JSON.parse(e.contents).title||`YouTube Video`}).catch(()=>{n.textContent=`YouTube Video`})})}S();let C=0;function w(e){e<0&&(e=0),e>2&&(e=2),C=e,document.body.setAttribute(`data-page`,C),C===1?g.pause():g.play().catch(()=>{})}document.getElementById(`next-arrow`).addEventListener(`click`,()=>w(C+1)),document.getElementById(`prev-arrow`).addEventListener(`click`,()=>w(C-1)),document.addEventListener(`keydown`,e=>{e.key===`ArrowRight`&&w(C+1),e.key===`ArrowLeft`&&w(C-1),e.key===`Escape`&&w(0)});</script>
+   <script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"></script>
+</body>
+</html>

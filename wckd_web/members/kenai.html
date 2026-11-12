@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kenai | WCKD</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --bg-color: #070b12;
+      --panel-bg: rgba(12, 17, 24, 0.7);
+      --panel-border: rgba(255, 255, 255, 0.12);
+      --soft-white: rgba(255, 255, 255, 0.8);
+      --muted-white: rgba(255, 255, 255, 0.6);
+      --glow: rgba(96, 165, 250, 0.34);
+      --shadow: rgba(0, 0, 0, 0.48);
+      --ease-bouncy: cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    html, body {
+      min-height: 100%;
+    }
+
+    body {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background:
+        url('https://file.garden/aPzCaL1nmSm7SyAN/memento-mori.jpg') center center / cover no-repeat fixed;
+      color: #fff;
+      overflow-x: hidden;
+      user-select: none;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(103, 166, 255, 0.18), transparent 30%);
+      pointer-events: none;
+    }
+
+    .main-shell {
+      position: relative;
+      width: min(1200px, 92vw);
+      min-height: 760px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+
+    .showcase {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero-panel {
+      position: relative;
+      min-height: 620px;
+      border-radius: 32px;
+      overflow: hidden;
+      background: rgba(12, 17, 24, 0.38);
+      border: 1px solid var(--panel-border);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.01));
+      pointer-events: none;
+    }
+
+    .hero-art {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 620px;
+      border-radius: 28px;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.28);
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      transform: scale(1.08);
+      filter: saturate(1.25) contrast(1.15) brightness(0.88);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(6, 9, 15, 0.72), rgba(6, 9, 15, 0.18) 42%, rgba(6, 9, 15, 0.78));
+      box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.28);
+    }
+
+    .profile-panel {
+      position: relative;
+      padding: 30px 28px 26px;
+      border-radius: 28px;
+      background: rgba(14, 19, 28, 0.7);
+      border: 1px solid var(--panel-border);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), inset 0 1px rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(16px);
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow {
+      font-size: 0.74rem;
+      letter-spacing: 0.3rem;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(67, 199, 128, 0.14);
+      border: 1px solid rgba(97, 233, 152, 0.38);
+      color: #74f0a4;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08rem;
+      text-transform: uppercase;
+    }
+
+    .live-badge::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #74f0a4;
+      box-shadow: 0 0 12px rgba(116, 240, 164, 0.8);
+    }
+
+    .avatar-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .avatar {
+      position: relative;
+      width: 156px;
+      height: 156px;
+      border-radius: 50%;
+      padding: 6px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(120, 168, 255, 0.15));
+      box-shadow: 0 18px 28px rgba(0, 0, 0, 0.34), 0 0 30px rgba(130, 165, 255, 0.2);
+    }
+
+    .avatar::after {
+      content: "";
+      position: absolute;
+      inset: -7px;
+      border-radius: 50%;
+      background-image: var(--avatar-decoration, none);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    .avatar.has-decoration::after {
+      opacity: 1;
+    }
+
+    .avatar img {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .status-dot {
+      position: absolute;
+      right: 12px;
+      bottom: 14px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: gray;
+      border: 3px solid rgba(7, 11, 18, 0.96);
+      z-index: 6;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.18);
+    }
+
+    .user-info {
+      text-align: center;
+    }
+
+    .username {
+      margin: 0 0 8px;
+      font-size: clamp(2.3rem, 3.2vw, 3.2rem);
+      line-height: 1.1;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.95);
+      letter-spacing: -0.05em;
+    }
+
+    .guild-tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.72rem;
+      letter-spacing: 0.08rem;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .status-text,
+    .activity,
+    .bio {
+      font-size: 0.96rem;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .status-text {
+      min-height: 24px;
+    }
+
+    .activity {
+      display: flex;
+      justify-content: center;
+      min-height: 24px;
+    }
+
+    .activity-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      padding: 14px 20px;
+      border-radius: 18px;
+      margin-top: 18px;
+      text-align: left;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s var(--ease-bouncy);
+    }
+
+    .activity-card:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .act-icon {
+      font-size: 2rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .act-details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .act-name {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #fff;
+    }
+
+    .act-state {
+      font-size: 0.75rem;
+      color: var(--muted-white);
+      margin-top: 3px;
+    }
+
+    .bio {
+      min-height: 24px;
+      margin-top: 12px;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .cursor {
+      display: inline-block;
+      margin-left: 2px;
+      width: 2px;
+      background: rgba(255, 255, 255, 0.9);
+      animation: blink 1s infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .social-btn {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.3rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .social-btn:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 10px 22px rgba(18, 23, 31, 0.45);
+    }
+
+    .back-home {
+      position: fixed;
+      top: 24px;
+      left: 24px;
+      z-index: 20;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      background: rgba(14, 19, 28, 0.72);
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 0.78rem;
+      text-decoration: none;
+      backdrop-filter: blur(12px);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .back-home:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.24);
+    }
+
+    #intro-screen {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000000;
+      z-index: 9999;
+      color: rgba(255, 255, 255, 0.96);
+      font-size: clamp(1.1rem, 2vw, 1.9rem);
+      letter-spacing: 0.12rem;
+      cursor: pointer;
+      transition: opacity 1s ease, visibility 1s ease;
+    }
+
+    #intro-screen.fade-out {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 0.28s forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 900px) {
+      .showcase {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel {
+        min-height: 360px;
+      }
+
+      .hero-art {
+        min-height: 360px;
+      }
+
+      .profile-panel {
+        padding: 22px 18px 20px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .main-shell {
+        width: min(92vw, 440px);
+      }
+
+      .profile-panel {
+        border-radius: 20px;
+      }
+
+      .avatar {
+        width: 128px;
+        height: 128px;
+      }
+
+      .social-btn {
+        width: 46px;
+        height: 46px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="back-home" href="index.html" aria-label="Go back to the WCKD main website">
+    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+    <span>WCKD</span>
+  </a>
+
+  <div id="intro-screen">
+    <span id="type-text"></span><span class="cursor">|</span>
+  </div>
+
+  <div id="main-content" class="main-shell">
+    <div class="showcase">
+      <section class="hero-panel" aria-label="Featured artwork">
+        <div class="hero-art">
+          <img class="hero-image" src="https://cdn.discordapp.com/banners/1193930694171316326/a_b41b961f6d1e3968db68b4a78cd1bd2e.webp?size=1024&animated=true" alt="Featured artwork">
+          <div class="hero-overlay"></div>
+        </div>
+      </section>
+
+      <aside class="profile-panel">
+        <div class="panel-header">
+          <span class="eyebrow">WCKD</span>
+        </div>
+
+        <div class="avatar-wrap">
+          <div class="avatar">
+            <img id="avatar" src="" alt="Profile">
+            <span class="status-dot" id="status-dot" title="offline"></span>
+          </div>
+        </div>
+
+        <div class="user-info">
+          <h1 class="username" id="username">Kenai</h1>
+          <span id="guild-tag" class="guild-tag">#0001</span>
+          <p class="status-text" id="status-text"></p>
+          <p class="activity" id="activity-text"></p>
+          <p class="bio"><span id="typing"></span><span class="cursor">|</span></p>
+        </div>
+
+        <div class="socials">
+          <a href="https://www.youtube.com/@LOCALMUSICPH" target="_blank" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://github.com/dfwxz" target="_blank" class="social-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://open.spotify.com/user/31unxnzxt35bmffbt2j4qdx2tmqq" target="_blank" class="social-btn" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <audio id="bg-music" src="https://file.garden/aPzCaL1nmSm7SyAN/stareloit_prodbykenai.wav" loop></audio>
+
+  <script>
+      const userId = "1193930694171316326";
+      // Elements
+      const statusDot = document.getElementById("status-dot");
+      const activityText = document.getElementById("activity-text");
+      const statusTextEl = document.getElementById("status-text");
+      const avatarImg = document.getElementById("avatar");
+      const avatarContainer = document.querySelector('.avatar');
+      const usernameEl = document.getElementById("username");
+
+      const statusColors = {
+        online: "limegreen",
+        idle: "gold",
+        dnd: "red",
+        offline: "gray"
+      };
+
+      const statusLabels = {
+        online: "Online",
+        idle: "Idle",
+        dnd: "Do Not Disturb",
+        offline: "Offline"
+      };
+      // Connect to Lanyard WebSocket
+      const ws = new WebSocket("wss://api.lanyard.rest/socket");
+      let heartbeatTimer;
+
+      ws.onclose = () => {
+        clearInterval(heartbeatTimer);
+      };
+
+      ws.onmessage = ({ data }) => {
+        const message = JSON.parse(data);
+
+        if (message.op === 1) {
+          clearInterval(heartbeatTimer);
+          heartbeatTimer = setInterval(() => {
+            if (ws.readyState === WebSocket.OPEN) {
+              ws.send(JSON.stringify({ op: 3, d: null }));
+            }
+          }, message.d.heartbeat_interval);
+
+          ws.send(JSON.stringify({
+            op: 2,
+            d: { subscribe_to_id: userId }
+          }));
+          return;
+        }
+
+        const { t, d } = message;
+        if (t === "INIT_STATE" || t === "PRESENCE_UPDATE") {
+          const status = d.discord_status; // online, idle, dnd, offline
+          const statusLabel = statusLabels[status] || "Unknown";
+          statusDot.style.backgroundColor = statusColors[status] || "gray";
+          statusDot.title = statusLabel;
+
+          // Find custom status (type 4)
+          const activities = Array.isArray(d.activities) ? d.activities : [];
+          const customStatus = activities.find(act => act.type === 4);
+
+          if (statusTextEl) {
+            statusTextEl.replaceChildren();
+            if (customStatus && customStatus.state) {
+              if (customStatus.emoji) {
+                if (customStatus.emoji.id) { // Custom emoji
+                  const emoji = document.createElement("img");
+                  emoji.src = `https://cdn.discordapp.com/emojis/${customStatus.emoji.id}.png`;
+                  emoji.alt = customStatus.emoji.name || "emoji";
+                  emoji.style.cssText = "width: 1em; height: 1em; vertical-align: -0.1em; margin-right: 4px;";
+                  statusTextEl.appendChild(emoji);
+                } else { // Standard emoji
+                  const emoji = document.createElement("span");
+                  emoji.textContent = customStatus.emoji.name || "";
+                  emoji.style.marginRight = "4px";
+                  statusTextEl.appendChild(emoji);
+                }
+              }
+              statusTextEl.appendChild(document.createTextNode(customStatus.state));
+            } else {
+              statusTextEl.textContent = statusLabel; // Fallback to Online, Idle, etc.
+            }
+          }
+          // Update avatar dynamically
+          let avatarUrl;
+          if (d.discord_user && d.discord_user.avatar) {
+            avatarUrl = `https://cdn.discordapp.com/avatars/${userId}/${d.discord_user.avatar}.png?size=512`;
+            avatarImg.src = avatarUrl;
+          } else {
+            avatarUrl = `https://cdn.discordapp.com/embed/avatars/0.png`; // default avatar
+            avatarImg.src = avatarUrl;
+          }
+
+          // Update avatar decoration
+          if (avatarContainer) {
+            if (d.discord_user && d.discord_user.avatar_decoration_data && d.discord_user.avatar_decoration_data.asset) {
+              const decorationUrl = `url('https://cdn.discordapp.com/avatar-decoration-presets/${d.discord_user.avatar_decoration_data.asset}.png?size=160')`;
+              avatarContainer.style.setProperty('--avatar-decoration', decorationUrl);
+              avatarContainer.classList.add('has-decoration');
+            } else {
+              avatarContainer.classList.remove('has-decoration');
+            }
+          }
+
+          // ✅ Update favicon with latest avatar
+          let favicon = document.querySelector("link[rel='icon']") || document.createElement("link");
+          favicon.rel = "icon";
+          favicon.type = "image/png";
+          favicon.href = avatarUrl;
+          document.head.appendChild(favicon);
+
+          // Show current activity
+          const activity = activities.find(act => act.type === 0 || act.type === 2);
+
+          if (activity) {
+            const card = document.createElement("div");
+            card.className = "activity-card";
+
+            const icon = document.createElement("i");
+            icon.className = "act-icon fa-solid fa-gamepad";
+
+            let title = `Playing ${activity.name || "a game"}`;
+            if (activity.type === 2) {
+              icon.className = "act-icon fa-brands fa-spotify";
+              icon.style.color = "#1DB954";
+              title = "Listening to Spotify";
+            } else if (activity.name && activity.name.includes("Visual Studio Code")) {
+              icon.className = "act-icon fa-solid fa-code";
+              icon.style.color = "#31a8ff";
+            }
+
+            const details = document.createElement("div");
+            details.className = "act-details";
+
+            const name = document.createElement("span");
+            name.className = "act-name";
+            name.textContent = title;
+
+            const state = document.createElement("span");
+            state.className = "act-state";
+            state.textContent = [activity.details, activity.state].filter(Boolean).join(" | ");
+
+            details.append(name, state);
+            card.append(icon, details);
+            activityText.replaceChildren(card);
+            activityText.style.display = 'flex';
+          } else {
+            activityText.replaceChildren();
+            activityText.style.display = 'none'; // Hide if no activity
+          }
+        }
+      };
+
+
+      const bioTexts = [
+        "LOCALMUSICPH",
+        "WCKD",
+      ];
+
+      let textIndex = 0;
+      let charIndex = 0;
+      let currentText = "";
+      let isDeleting = false;
+      const typingElement = document.getElementById("typing");
+
+      function typeEffect() {
+        currentText = bioTexts[textIndex];
+
+        if (isDeleting) {
+          typingElement.textContent = currentText.substring(0, charIndex--);
+        } else {
+          typingElement.textContent = currentText.substring(0, charIndex++);
+        }
+
+        if (!isDeleting && charIndex === currentText.length + 1) {
+          isDeleting = true;
+          setTimeout(typeEffect, 1000); // pause before deleting
+          return;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          textIndex = (textIndex + 1) % bioTexts.length;
+        }
+
+        setTimeout(typeEffect, isDeleting ? 50 : 100);
+      }
+
+      typeEffect();
+
+      document.addEventListener("contextmenu", event => event.preventDefault());
+
+      document.onkeydown = function(e) {
+        // F12
+        if (e.keyCode == 123) {
+          return false;
+        }
+        // Ctrl+Shift+I
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+          return false;
+        }
+        // Ctrl+U
+        if (e.ctrlKey && e.keyCode == 85) {
+          return false;
+        }
+      };
+
+      document.addEventListener("dragstart", event => event.preventDefault());
+
+      const intro = document.getElementById("intro-screen");
+      const content = document.getElementById("main-content");
+      const music = document.getElementById("bg-music");
+      const typeText = document.getElementById("type-text");
+
+      const message = "click to continue...";
+      let i = 0;
+
+      // Typewriter effect with fade-in
+      function typeWriter() {
+        if (i < message.length) {
+          const span = document.createElement("span");
+          span.textContent = message.charAt(i);
+          span.classList.add("fade-in");
+          typeText.appendChild(span);
+          i++;
+          setTimeout(typeWriter, 100); // typing speed
+        }
+      }
+      typeWriter();
+
+      // Click to continue
+      intro.addEventListener("click", () => {
+        intro.classList.add("fade-out");
+
+        setTimeout(() => {
+          intro.style.display = "none";
+          // Add a 5-second delay before playing the music
+          setTimeout(() => {
+            music.play().catch(err => console.log("Autoplay blocked:", err));
+          }, 2000);
+        }, 1000);
+      });
+
+      // Page View Counter
+      document.addEventListener("DOMContentLoaded", () => {
+        // Select the counter container by its ID
+        const counterContainer = document.querySelector("#view-counter");
+
+        // Ensure the counter element exists before running the code
+        if (counterContainer) {
+          let visitCount = localStorage.getItem("page_view");
+
+          // If a count exists, increment it. Otherwise, start at 1.
+          if (visitCount) {
+            visitCount = Number(visitCount) + 1;
+          } else {
+            visitCount = 1;
+          }
+          // Store the new count in localStorage
+          localStorage.setItem("page_view", visitCount);
+
+          counterContainer.innerHTML = visitCount;
+        }
+      });
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/counterapi/dist/counter.browser.min.js"></script>
+  <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool@latest/disable-devtool.min.js'></script>
+</body>
+</html>

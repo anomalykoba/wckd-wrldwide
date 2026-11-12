@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gxbzuu | WCKD</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');
+
+    :root {
+      --bg-color: #070b12; 
+      --panel-bg: rgba(10, 14, 23, 0.45); 
+      --panel-border: rgba(255, 255, 255, 0.05);
+      --soft-white: rgba(255, 255, 255, 0.85); 
+      --muted-white: rgba(255, 255, 255, 0.5);
+      --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.4);
+      --ease-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+      --ease-bouncy: cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    html, body { min-height: 100%; overflow: hidden; }
+    
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.25); }
+
+    body {
+      position: relative; min-height: 100vh; display: flex; justify-content: center; align-items: center;
+      background:url('https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3YzVpY3dmYThibzBrZTVwOGVhN2huajUwcjZrMDN6OGp4dzl3eWtqbyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/DoHGKMzgXl56jRQfvX/giphy.gif') center center / cover no-repeat fixed;
+      color: #fff; user-select: none;
+    }
+    
+    body::before { 
+      content: ""; position: fixed; inset: 0; 
+      background: radial-gradient(circle at 50% 0%, rgba(103, 166, 255, 0.03), transparent 60%),
+                  radial-gradient(circle at 50% 100%, rgba(0, 0, 0, 0.95), transparent 70%); 
+      pointer-events: none; z-index: 0;
+    }
+
+    .main-shell { position: relative; width: min(1200px, 92vw); min-height: 760px; margin: 0 auto; display: flex; align-items: center; justify-content: center; z-index: 1; }
+    .showcase { width: 100%; display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; justify-items: center; }
+    .profile-panel { position: relative; width: min(100%, 520px); padding: 40px 32px; border-radius: 32px; background: rgba(10, 14, 23, 0.55); border: 1px solid var(--panel-border); box-shadow: var(--shadow-soft), inset 0 1px rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(25px); }
+    
+    .panel-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+    .eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.35rem; text-transform: uppercase; color: var(--muted-white); }
+    .avatar-wrap { display: flex; justify-content: center; margin-bottom: 24px; }
+    .avatar { position: relative; width: 160px; height: 160px; border-radius: 50%; padding: 4px; background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.01)); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); transition: transform 0.4s var(--ease-bouncy); }
+    .avatar:hover { transform: scale(1.05); }
+    .avatar::after { content: ""; position: absolute; inset: -7px; border-radius: 50%; background-image: var(--avatar-decoration, none); background-size: cover; background-position: center; opacity: 0; pointer-events: none; z-index: 3; transition: opacity 0.3s ease; }
+    .avatar.has-decoration::after { opacity: 1; }
+    .avatar img { position: relative; z-index: 2; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; background: #000; border: 2px solid rgba(255, 255, 255, 0.08); }
+    .status-dot { position: absolute; right: 14px; bottom: 14px; width: 20px; height: 20px; border-radius: 50%; background: gray; border: 4px solid #0b0f17; z-index: 6; }
+
+    .user-info { text-align: center; }
+    .username { margin: 0 0 6px; font-size: clamp(2.5rem, 3.5vw, 3.5rem); font-weight: 800; background: linear-gradient(to right, #ffffff, #a0aec0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -0.04em; line-height: 1.1; }
+    .guild-tag { display: inline-block; margin-bottom: 16px; padding: 4px 12px; border-radius: 999px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1rem; color: var(--muted-white); }
+    
+    .status-text { font-size: 0.95rem; font-weight: 400; color: var(--soft-white); min-height: 24px; }
+    .bio { min-height: 24px; margin-top: 16px; font-size: 0.9rem; font-weight: 300; color: var(--muted-white); letter-spacing: 0.02em; }
+    .cursor { display: inline-block; margin-left: 2px; width: 2px; background: rgba(255, 255, 255, 0.6); animation: blink 1s infinite; vertical-align: middle; }
+    @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
+
+    .activity { display: flex; justify-content: center; min-height: 24px; }
+    .activity-card { display: inline-flex; align-items: center; gap: 16px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.04); padding: 14px 20px; border-radius: 18px; margin-top: 18px; text-align: left; backdrop-filter: blur(10px); transition: transform 0.3s var(--ease-bouncy); }
+    .activity-card:hover { transform: translateY(-3px); background: rgba(255, 255, 255, 0.04); border-color: rgba(255, 255, 255, 0.1); }
+    .act-icon { font-size: 2rem; color: rgba(255, 255, 255, 0.8); }
+    .act-details { display: flex; flex-direction: column; }
+    .act-name { font-weight: 600; font-size: 0.85rem; color: #fff; }
+    .act-state { font-size: 0.75rem; color: var(--muted-white); margin-top: 3px; }
+
+    .socials { display: flex; justify-content: center; gap: 16px; margin-top: 32px; }
+    .social-btn { width: 54px; height: 54px; display: flex; align-items: center; justify-content: center; border-radius: 18px; text-decoration: none; color: var(--soft-white); font-size: 1.4rem; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.4s var(--ease-bouncy); }
+    .social-btn:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.08); color: #fff; border-color: rgba(255, 255, 255, 0.15); box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); }
+
+    .back-home { position: fixed; top: 30px; left: 30px; z-index: 20; display: inline-flex; align-items: center; gap: 10px; padding: 12px 20px; border: 1px solid var(--panel-border); border-radius: 14px; background: rgba(10, 14, 23, 0.5); color: var(--soft-white); font-size: 0.8rem; font-weight: 500; text-decoration: none; backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); transition: all 0.3s ease; }
+    .back-home:hover { transform: translateX(-3px); background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.3); color: #fff; }
+
+    #intro-screen { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: #020408; z-index: 9999; color: var(--soft-white); font-size: clamp(1.2rem, 2vw, 2rem); font-weight: 300; letter-spacing: 0.2rem; cursor: pointer; transition: opacity 1.2s ease, visibility 1.2s ease; }
+    #intro-screen.fade-out { opacity: 0; visibility: hidden; pointer-events: none; }
+    .fade-in { opacity: 0; animation: fadeIn 0.4s forwards; }
+    @keyframes fadeIn { from { opacity: 0; filter: blur(4px); } to { opacity: 1; filter: blur(0); } }
+
+    @media (max-width: 1100px) {
+      .showcase { grid-template-columns: 1fr; }
+      .hero-panel { min-height: 320px; }
+      .hero-art { min-height: 320px; }
+    }
+    @media (max-width: 700px) {
+      body { overflow-y: auto; }
+      .main-shell { min-height: auto; padding: 72px 0 32px; }
+      .profile-panel { padding: 32px 20px; }
+      .hero-panel, .hero-art { min-height: 260px; }
+      .back-home { top: 16px; left: 16px; }
+    }
+    @media (max-width: 520px) {
+      .main-shell { width: min(94vw, 440px); }
+    }
+  </style>
+</head>
+<body>
+  <a class="back-home" href="index.html" aria-label="Go back to the WCKD main website">
+    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+    <span>WCKD</span>
+  </a>
+
+  <div id="intro-screen">
+    <span id="type-text"></span><span class="cursor">|</span>
+  </div>
+
+      <aside class="profile-panel">
+        <div class="panel-header">
+          <span class="eyebrow">WCKD</span>
+        </div>
+
+        <div class="avatar-wrap">
+          <div class="avatar">
+            <img id="avatar" src="" alt="Profile">
+            <span class="status-dot" id="status-dot" title="offline"></span>
+          </div>
+        </div>
+
+        <div class="user-info">
+          <h1 class="username" id="username">Gxbzuu</h1>
+          <span id="guild-tag" class="guild-tag">WCKD Member</span>
+          <p class="status-text" id="status-text"></p>
+          <p class="activity" id="activity-text"></p>
+          <p class="bio"><span id="typing"></span><span class="cursor">|</span></p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <audio id="bg-music" src="" loop></audio>
+
+  <script>
+      const userId = "973249074713210910";
+      // Elements
+      const statusDot = document.getElementById("status-dot");
+      const activityText = document.getElementById("activity-text");
+      const statusTextEl = document.getElementById("status-text");
+      const avatarImg = document.getElementById("avatar");
+      const avatarContainer = document.querySelector('.avatar');
+      const usernameEl = document.getElementById("username");
+
+      const statusColors = {
+        online: "limegreen",
+        idle: "gold",
+        dnd: "red",
+        offline: "gray"
+      };
+
+      const statusLabels = {
+        online: "Online",
+        idle: "Idle",
+        dnd: "Do Not Disturb",
+        offline: "Offline"
+      };
+      // Connect to Lanyard WebSocket
+      const ws = new WebSocket("wss://api.lanyard.rest/socket");
+      let heartbeatTimer;
+
+      ws.onclose = () => {
+        clearInterval(heartbeatTimer);
+      };
+
+      ws.onmessage = ({ data }) => {
+        const message = JSON.parse(data);
+
+        if (message.op === 1) {
+          clearInterval(heartbeatTimer);
+          heartbeatTimer = setInterval(() => {
+            if (ws.readyState === WebSocket.OPEN) {
+              ws.send(JSON.stringify({ op: 3, d: null }));
+            }
+          }, message.d.heartbeat_interval);
+
+          ws.send(JSON.stringify({
+            op: 2,
+            d: { subscribe_to_id: userId }
+          }));
+          return;
+        }
+
+        const { t, d } = message;
+        if (t === "INIT_STATE" || t === "PRESENCE_UPDATE") {
+          const status = d.discord_status; // online, idle, dnd, offline
+          const statusLabel = statusLabels[status] || "Unknown";
+          statusDot.style.backgroundColor = statusColors[status] || "gray";
+          statusDot.title = statusLabel;
+
+          // Find custom status (type 4)
+          const activities = Array.isArray(d.activities) ? d.activities : [];
+          const customStatus = activities.find(act => act.type === 4);
+
+          if (statusTextEl) {
+            statusTextEl.replaceChildren();
+            if (customStatus && customStatus.state) {
+              if (customStatus.emoji) {
+                if (customStatus.emoji.id) { // Custom emoji
+                  const emoji = document.createElement("img");
+                  emoji.src = `https://cdn.discordapp.com/emojis/${customStatus.emoji.id}.png`;
+                  emoji.alt = customStatus.emoji.name || "emoji";
+                  emoji.style.cssText = "width: 1em; height: 1em; vertical-align: -0.1em; margin-right: 4px;";
+                  statusTextEl.appendChild(emoji);
+                } else { // Standard emoji
+                  const emoji = document.createElement("span");
+                  emoji.textContent = customStatus.emoji.name || "";
+                  emoji.style.marginRight = "4px";
+                  statusTextEl.appendChild(emoji);
+                }
+              }
+              statusTextEl.appendChild(document.createTextNode(customStatus.state));
+            } else {
+              statusTextEl.textContent = statusLabel; // Fallback to Online, Idle, etc.
+            }
+          }
+          // Update avatar dynamically
+          let avatarUrl;
+          if (d.discord_user && d.discord_user.avatar) {
+            avatarUrl = `https://cdn.discordapp.com/avatars/${userId}/${d.discord_user.avatar}.png?size=512`;
+            avatarImg.src = avatarUrl;
+          } else {
+            avatarUrl = `https://cdn.discordapp.com/embed/avatars/0.png`; // default avatar
+            avatarImg.src = avatarUrl;
+          }
+
+          // Update avatar decoration
+          if (avatarContainer) {
+            if (d.discord_user && d.discord_user.avatar_decoration_data && d.discord_user.avatar_decoration_data.asset) {
+              const decorationUrl = `url('https://cdn.discordapp.com/avatar-decoration-presets/${d.discord_user.avatar_decoration_data.asset}.png?size=160')`;
+              avatarContainer.style.setProperty('--avatar-decoration', decorationUrl);
+              avatarContainer.classList.add('has-decoration');
+            } else {
+              avatarContainer.classList.remove('has-decoration');
+            }
+          }
+
+          let favicon = document.querySelector("link[rel='icon']") || document.createElement("link");
+          favicon.rel = "icon";
+          favicon.type = "image/png";
+          favicon.href = avatarUrl;
+          document.head.appendChild(favicon);
+
+          const activity = activities.find(act => act.type === 0 || act.type === 2);
+
+          if (activity) {
+            const card = document.createElement("div");
+            card.className = "activity-card";
+
+            const icon = document.createElement("i");
+            icon.className = "act-icon fa-solid fa-gamepad";
+
+            let title = `Playing ${activity.name || "a game"}`;
+            if (activity.type === 2) {
+              icon.className = "act-icon fa-brands fa-spotify";
+              icon.style.color = "#1DB954";
+              title = "Listening to Spotify";
+            } else if (activity.name && activity.name.includes("Visual Studio Code")) {
+              icon.className = "act-icon fa-solid fa-code";
+              icon.style.color = "#31a8ff";
+            }
+
+            const details = document.createElement("div");
+            details.className = "act-details";
+
+            const name = document.createElement("span");
+            name.className = "act-name";
+            name.textContent = title;
+
+            const state = document.createElement("span");
+            state.className = "act-state";
+            state.textContent = [activity.details, activity.state].filter(Boolean).join(" | ");
+
+            details.append(name, state);
+            card.append(icon, details);
+            activityText.replaceChildren(card);
+            activityText.style.display = 'flex';
+          } else {
+            activityText.replaceChildren();
+            activityText.style.display = 'none'; // Hide if no activity
+          }
+        }
+      };
+
+
+      const bioTexts = ["WCKD","Gxbzuu"];
+      let textIndex = 0;
+      let charIndex = 0;
+      let currentText = "";
+      let isDeleting = false;
+      const typingElement = document.getElementById("typing");
+
+      function typeEffect() {
+        currentText = bioTexts[textIndex];
+
+        if (isDeleting) {
+          typingElement.textContent = currentText.substring(0, charIndex--);
+        } else {
+          typingElement.textContent = currentText.substring(0, charIndex++);
+        }
+
+        if (!isDeleting && charIndex === currentText.length + 1) {
+          isDeleting = true;
+          setTimeout(typeEffect, 1000); // pause before deleting
+          return;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          textIndex = (textIndex + 1) % bioTexts.length;
+        }
+
+        setTimeout(typeEffect, isDeleting ? 50 : 100);
+      }
+
+      typeEffect();
+
+      document.addEventListener("contextmenu", event => event.preventDefault());
+
+      document.onkeydown = function(e) {
+        // F12
+        if (e.keyCode == 123) {
+          return false;
+        }
+        // Ctrl+Shift+I
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+          return false;
+        }
+        // Ctrl+U
+        if (e.ctrlKey && e.keyCode == 85) {
+          return false;
+        }
+      };
+
+      document.addEventListener("dragstart", event => event.preventDefault());
+
+      const intro = document.getElementById("intro-screen");
+      const content = document.getElementById("main-content");
+      const music = document.getElementById("bg-music");
+      const typeText = document.getElementById("type-text");
+      const message = "click to continue...";
+      let i = 0;
+
+      // Typewriter effect with fade-in
+      function typeWriter() {
+        if (i < message.length) {
+          const span = document.createElement("span");
+          span.textContent = message.charAt(i);
+          span.classList.add("fade-in");
+          typeText.appendChild(span);
+          i++;
+          setTimeout(typeWriter, 100); // typing speed
+        }
+      }
+      typeWriter();
+
+      // Click to continue
+      intro.addEventListener("click", () => {
+        intro.classList.add("fade-out");
+
+        setTimeout(() => {
+          intro.style.display = "none";
+          setTimeout(() => {
+            music.play().catch(err => console.log("Autoplay blocked:", err));
+          }, 2000);
+        }, 1000);
+      });
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/counterapi/dist/counter.browser.min.js"></script>
+  <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool@latest/disable-devtool.min.js'></script>
+</body>
+</html>
